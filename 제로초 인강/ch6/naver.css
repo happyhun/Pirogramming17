@@ -9,6 +9,10 @@ body {
   font-family: Dotum, "돋움", Helvetica, "Apple SD Gothic Neo", sans-serif;
 }
 
+.inline-block {
+  display: inline-block;
+}
+
 #fixed {
   position: fixed;
   bottom: 50px;
@@ -58,7 +62,7 @@ header {
 
 #header-search {
   clear: both;
-  padding-top: 12px;
+  padding-top: 45px;
 }
 
 #header-search a {
@@ -296,12 +300,17 @@ main {
   width: 100%;
 }
 
+#main-first-block {
+  display: inline-block;
+  width: 100%;
+}
+
 #main-centered {
   padding: 8px 10px 0;
   width: 1100px;
 }
 #main-ad {
-  display: inline-block;
+  float: left;
   width: 740px;
   height: 120px;
   background: #000;
@@ -310,12 +319,21 @@ main {
 }
 
 #main-login {
-  display: inline-block;
+  float: left;
   width: 332px;
   height: 120px;
   vertical-align: top;
   background: white;
   margin-bottom: 8px;
+}
+
+#main-second-block .inline-block:first-child {
+  width: 740px;
+}
+
+#main-second-block .inline-block:first-child {
+  width: 332px;
+  vertical-align: top;
 }
 
 #main-ytn {
@@ -327,6 +345,10 @@ main {
   margin-bottom: 8px;
 }
 
+#main-ytn h3,
+#main-ytn ol {
+  display: inline-block;
+}
 #main-newsstand {
   display: inline-block;
   width: 740px;
@@ -352,6 +374,22 @@ main {
   margin-bottom: 8px;
 }
 
+#main-newsstand h3 {
+  height: 45px;
+}
+#main-newsstand ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+#main-newsstand li {
+  float: left;
+  width: 123px;
+  height: 67px;
+  border-right: 1px solid #f1f3f6;
+  border-bottom: 1px solid #f1f3f6;
+  text-align: center;
+}
 #main-category {
   display: inline-block;
   width: 740px;
