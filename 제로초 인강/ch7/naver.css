@@ -355,6 +355,20 @@ main {
   margin-bottom: 8px;
 }
 
+#main-login .login-wrapper {
+  padding: 15px 25px;
+}
+#main-login .login-image {
+  background: url(./sp_login.png) 0 -47px no-repeat;
+  display: inline-block;
+  width: 280px;
+  height: 37px;
+}
+#main-login .login-text {
+  color: #888;
+  font-size: 12px;
+  line-height: 14px;
+}
 #main-second-block .inline-block:first-child {
   width: 740px;
 }
