@@ -94,7 +94,7 @@ header {
   padding: 0;
   outline: none;
   vertical-align: top;
-  width: 405px;
+  width: 395px;
   height: 23px;
 }
 
@@ -107,6 +107,28 @@ header {
   position: absolute;
   right: -2px;
   top: -2px;
+}
+
+#search-keyboard {
+  background-image: url(https://s.pstatic.net/static/www/img/uit/2019/sp_search.svg);
+  background-repeat: no-repeat;
+  background-position: -33px -60px;
+  width: 19px;
+  height: 11px;
+  display: inline-block;
+  margin: 0 6px;
+  vertical-align: middle;
+}
+
+#search-history {
+  background-image: url(https://s.pstatic.net/static/www/img/uit/2019/sp_search.svg);
+  background-repeat: no-repeat;
+  background-position: -87px -60px;
+  width: 9px;
+  height: 4px;
+  display: inline-block;
+  margin: 0 6px;
+  vertical-align: middle;
 }
 
 #search-image {
@@ -171,6 +193,11 @@ nav li:nth-child(5) span:first-child {
 nav li:nth-child(6) span:first-child {
   width: 25px;
   background-position: -70px -285px;
+}
+
+nav li:nth-child(7) span:first-child {
+  width: 35px;
+  background-position: -125px -130px;
 }
 
 .nav-divider {
