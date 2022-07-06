@@ -1,0 +1,125 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 10rem;
+}
+
+li {
+  list-style-type: none;
+  width: 20rem;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  width: 20rem;
+}
+.container-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.border {
+  border: 1px solid;
+  border-radius: 1em;
+  border-color: #aec2b2;
+}
+
+.btn {
+  border: 0;
+  border-radius: 2em;
+  margin: 1rem;
+}
+
+.bg-color {
+  background-color: #aec2b2;
+}
+
+.bg-white {
+  background-color: white;
+}
+
+.p {
+  padding: 0.5rem;
+}
+
+.m {
+  margin: 0.5rem;
+}
+
+button {
+  border: 0;
+}
+
+.space-btw {
+  display: flex;
+  justify-content: space-between;
+}
+
+#container-bar {
+  width: 20rem;
+  border-radius: 1rem 1rem 0 0;
+}
+
+.circle {
+  display: inline-block; /* 영역적용가능해짐 */
+  width: 20px;
+  height: 20px;
+  border: 2px solid #333;
+  box-sizing: border-box;
+  border-radius: 10px; /* 모서리둥글게 처리 */
+  position: relative;
+  top: 4px;
+  cursor: pointer; /* 마우스 올렸을때 손모양 처리 */
+}
+.circle:after {
+  content: "\2714"; /* 체크박스 특수문자 */
+  font-size: 20px;
+  color: #333;
+  position: absolute;
+  top: -10px;
+  left: 0;
+
+  opacity: 0; /* 처음엔 안보이게 처리 */
+  transition: 0.2s; /* CSS변화에 시간차 처리 */
+}
+
+/* input이 체크되면 특수문자 보이게 처리 */
+#chk:checked + .circle:after {
+  opacity: 1;
+}
+
+/* 체크박스는 display:none;을 주면 데이터 처리가 안됨 */
+#chk {
+  position: absolute;
+  left: -999em;
+}
+
+#container-record {
+  width: 20rem;
+}
+
+.left {
+  justify-content: left;
+}
+
+.left > span {
+  font-size: large;
+  margin: 0.5rem 0;
+  margin-left: 6.8rem;
+}
+
+.left > input {
+  margin-left: 0.7rem;
+}

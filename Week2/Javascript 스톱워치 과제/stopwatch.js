@@ -23,16 +23,21 @@ buttonStop.onclick = function () {
   const li = document.createElement("li");
   const span = document.createElement("span");
   const input = document.createElement("input");
+  const div = document.createElement("div");
+
   input.setAttribute("type", "checkbox");
   input.setAttribute("class", "check");
+  div.setAttribute("class", "container-row left");
 
   span.innerText =
     (seconds > 9 ? seconds : "0" + seconds) +
     ":" +
     (tenMillis > 9 ? tenMillis : "0" + tenMillis);
-  li.appendChild(input);
-  li.appendChild(span);
-  recordList.append(li);
+
+  div.appendChild(input);
+  div.appendChild(span);
+  li.appendChild(div);
+  recordList.appendChild(li);
 };
 
 buttonReset.onclick = function () {
