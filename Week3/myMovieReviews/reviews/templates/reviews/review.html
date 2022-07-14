@@ -1,25 +1,41 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Movie reviews</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
   </head>
   <body>
     <header>
-      <a href="{% url 'reviews:review' %}">my Movie reviews</a>
-      <a href="{% url 'reviews:create' %}">Add a New review</a>
+      <div class="flex-container space-between">
+        <div><a href="{% url 'reviews:review' %}">myMoviereviews</a></div>
+        <div>
+          <a href="{% url 'reviews:create' %}" id="add-review"
+            >Add a New review</a
+          >
+        </div>
+      </div>
     </header>
     <main>
-      {% for review in reviews %}
-      <article>
-        <a href="{% url 'reviews:detail' review.id %}">{{review.title}}</a>
-        <p>개봉년도 {{review.release}}년</p>
-        <p>장르 {{review.genre}}</p>
-        <p>별점 {{review.rating}}</p>
-      </article>
-      {% endfor %}
+      <div class="flex-container space-around">
+        {% for review in reviews %}
+        <article>
+          <div class="bg-gray">
+            <div>
+              <a href="{% url 'reviews:detail' review.id %}"
+                >{{review.title}}</a
+              >
+            </div>
+            <p>개봉년도 {{review.release}}년</p>
+            <p>장르 {{review.genre}}</p>
+            <p>별점 {{review.rating}}</p>
+          </div>
+        </article>
+        {% endfor %}
+      </div>
     </main>
   </body>
 </html>

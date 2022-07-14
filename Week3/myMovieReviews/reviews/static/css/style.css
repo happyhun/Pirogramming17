@@ -1,0 +1,81 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  color: black;
+}
+
+body {
+  margin: 20px;
+}
+
+header > .flex-container {
+  border-bottom: 1px solid;
+}
+
+.flex-container {
+  display: flex;
+  padding: 20px;
+  justify-content: center;
+}
+
+.space-around {
+  justify-content: space-around;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.flex-container a {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#add-review {
+  font-size: 16px;
+}
+
+.bg-gray {
+  padding: 15px;
+  background-color: lightgray;
+}
+article > div > div {
+  margin-bottom: 15px;
+}
+
+article p {
+  margin-bottom: 10px;
+}
+
+.mt {
+  margin-top: 10px;
+}
+
+#button {
+  font-size: 16px;
+  font-family: "Malgun Gothic, sans-serif";
+  font-weight: normal;
+  border: none;
+  background-color: white;
+  padding: 0 5px;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.form-container {
+  padding: 15px;
+  background-color: lightgray;
+}
+
+.form-container > div {
+  text-align: center;
+  border-bottom: 1px solid;
+}
+
+form {
+  padding: 20px;
+}

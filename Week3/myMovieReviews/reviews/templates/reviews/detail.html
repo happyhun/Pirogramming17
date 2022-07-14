@@ -1,32 +1,48 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Movie reviews</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
   </head>
   <body>
     <header>
-      <a href="{% url 'reviews:review' %}">my Movie reviews</a>
-      <a href="{% url 'reviews:create' %}">Add a New review</a>
+      <div class="flex-container space-between">
+        <div><a href="{% url 'reviews:review' %}">myMoviereviews</a></div>
+        <div>
+          <a href="{% url 'reviews:create' %}" id="add-review"
+            >Add a New review</a
+          >
+        </div>
+      </div>
     </header>
     <article>
-      <div>
-        <h1>{{review.title}}</h1>
-        <a href="{% url 'reviews:update' review.id %}">수정</a>
-        <form action="{% url 'reviews:delete' review.id %}" method="post">
-          {% csrf_token %}
-          <button>삭제</button>
-        </form>
+      <div class="flex-container space-between">
+        <div><h1>{{review.title}}</h1></div>
+        <div class="flex-container">
+          <div>
+            <a href="{% url 'reviews:update' review.id %}" id="button">수정</a>
+          </div>
+          <div>
+            <form action="{% url 'reviews:delete' review.id %}" method="post">
+              {% csrf_token %}
+              <button id="button">삭제</button>
+            </form>
+          </div>
+        </div>
       </div>
-      <p>개봉년도 {{review.release}}</p>
-      <p>감독 {{review.director}}</p>
-      <p>주연 {{review.actor}}</p>
-      <p>장르 {{review.genre}}</p>
-      <p>별점 {{review.rating}}</p>
-      <p>러닝타임 {{review.time}}</p>
-      <div>{{review.review}}</div>
+      <div class="bg-gray">
+        <p>개봉년도 {{review.release}}</p>
+        <p>감독 {{review.director}}</p>
+        <p>주연 {{review.actor}}</p>
+        <p>장르 {{review.genre}}</p>
+        <p>별점 {{review.rating}}</p>
+        <p>러닝타임 {{review.time}}</p>
+      </div>
+      <div class="bg-gray mt">{{review.review}}</div>
     </article>
   </body>
 </html>
