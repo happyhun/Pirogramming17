@@ -34,7 +34,11 @@
           </div>
           <div>
             장르:
-            <input type="text" name="genre" value="{{review.genre}}" />
+            <select name="genre" value="{{review.genre}}">
+              {% for k,v in genres %}
+              <option value="{{v}}">{{v}}</option>
+              {% endfor %}
+            </select>
           </div>
           <div>
             별점:
