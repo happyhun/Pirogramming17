@@ -1,0 +1,26 @@
+{% extends "base.html" %} {% block content %}
+<article>
+  <h2>{{ tool.name }}</h2>
+  <p>{{tool.kind}}</p>
+  <p>{{tool.content}}</p>
+  <p>만들 수 있는 SW 목록</p>
+  {% for post in all_post %}
+  <a href="{% url 'posts:detail' post.id %}"> {{post.title}} </a>
+  {% endfor %}
+</article>
+
+<div>
+  <form action="{% url 'posts:tool_delete' tool.id %}" method="post">
+    {% csrf_token %}
+    <button>삭제</button>
+  </form>
+  <form action="{% url 'posts:tool_list' %}" method="post">
+    {% csrf_token %}
+    <button>목록</button>
+  </form>
+  <form action="{% url 'posts:tool_update' tool.id %}" method="get">
+    {% csrf_token %}
+    <button>수정</button>
+  </form>
+</div>
+{% endblock %}

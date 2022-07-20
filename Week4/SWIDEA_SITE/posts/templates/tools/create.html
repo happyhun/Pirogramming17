@@ -1,0 +1,18 @@
+{% extends "base.html" %} {% block content %}
+<form action="{% url 'posts:tool_create' %}" method="post">
+  {% csrf_token %}
+  <p>
+    이름:
+    <input type="text" name="name" />
+  </p>
+  <p>
+    종류:
+    <input type="text" name="kind" />
+  </p>
+  <p>개발툴 설명:</p>
+  <textarea name="content" id="" cols="30" rows="10"></textarea>
+  <div>
+    <input type="submit" value="submit" />
+  </div>
+</form>
+{% endblock %}

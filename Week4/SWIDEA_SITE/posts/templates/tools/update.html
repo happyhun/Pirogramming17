@@ -1,0 +1,14 @@
+{% extends "base.html" %} {% block content %}
+<form action="{% url 'posts:tool_update' id %}" method="post">
+  {% csrf_token %}
+  <p>이름:</p>
+  {{form.name}}
+  <p>종류:</p>
+  {{form.kind}}
+  <p>개발툴 설명:</p>
+  {{form.content}}
+  <div>
+    <input type="submit" value="submit" />
+  </div>
+</form>
+{% endblock %}

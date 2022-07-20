@@ -1,0 +1,9 @@
+{% extends "base.html" %} {% block content %} {% for tool in tools %}
+<article>
+  <div>
+    <a href="{% url 'posts:tool_detail' tool.id %}"> {{tool.name}} </a>
+    <p>{{tool.kind}}</p>
+    <p>{{tool.content}}</p>
+  </div>
+</article>
+{% endfor %} {% endblock %}

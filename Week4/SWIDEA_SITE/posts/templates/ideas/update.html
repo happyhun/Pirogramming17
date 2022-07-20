@@ -1,0 +1,28 @@
+{% extends "base.html" %} {% block content %}
+<form
+  action="{% url 'posts:update' id %}"
+  method="post"
+  enctype="multipart/form-data"
+>
+  {% csrf_token %}
+  <p>아이디어명:</p>
+  {{form.title}}
+  <p>Image:</p>
+  {{form.image}}
+  <p>아이디어 설명:</p>
+  {{form.content}}
+  <p>아이디어 관심도:</p>
+  {{form.interest}}
+  <p>예상 개발툴:</p>
+  <select name="devtool">
+    {% for tool in tools %} {% if post.devtool.name == tool.name %}
+    <option value="{{tool.id}}" selected="selected">{{tool.name}}</option>
+    {% else %}
+    <option value="{{tool.id}}">{{tool.name}}</option>
+    {% endif %} {% endfor %}
+  </select>
+  <div>
+    <input type="submit" value="submit" />
+  </div>
+</form>
+{% endblock %}
