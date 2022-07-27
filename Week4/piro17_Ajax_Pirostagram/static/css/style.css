@@ -1,0 +1,21 @@
+body {
+  display: flex;
+  justify-content: center;
+}
+
+.main-container {
+  border: 1px solid;
+}
+
+.name-container {
+  padding: 10px;
+  font-weight: bold;
+}
+
+.img-container {
+}
+
+img {
+  width: 400px;
+  height: 500px;
+}

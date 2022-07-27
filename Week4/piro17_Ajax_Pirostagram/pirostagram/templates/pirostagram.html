@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pirostagram</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="name-container"><span>Piro17</span></div>
+      <div class="img-container">
+        <img src="{% static 'img/upload_image.jpg' %}" />
+      </div>
+      <button class="post__like" onclick="onClickLike()">Like 0</button>
+      <div>댓글 목록</div>
+      <div>댓글 달기</div>
+    </div>
+    <script>
+      const strip = (string) => {
+        return string.replace(/^\s+|\s+$/g, "");
+      };
+
+      const requestLike = new XMLHttpRequest();
+
+      const onClickLike = () => {
+        requestLike.open("POST", "/like_ajax/", true);
+        requestLike.setRequestHeader(
+          "Content-Type",
+          "application/x-www-form-urlencoded"
+        );
+        requestLike.send();
+      };
+
+      requestLike.onreadystatechange = () => {
+        if (requestLike.readyState === XMLHttpRequest.DONE) {
+          if (requestLike.status < 400) {
+            const element = document.querySelector(`.post__like`);
+            console.log(element);
+            const originHTML = element.innerHTML;
+            const [buttonType, num] = strip(originHTML).split(" "); // ['Like', '0']
+            if (Number(num) == 0) {
+              var count = Number(num) + 1; // '0' -> 0 -> 1
+            } else {
+              var count = Number(num) - 1; // '0' -> 0 -> 1
+            }
+            element.innerHTML = `${buttonType} ${count}`; // like 1
+          }
+        }
+      };
+    </script>
+  </body>
+</html>
